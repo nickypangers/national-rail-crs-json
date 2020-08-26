@@ -51,6 +51,8 @@ func getCrs(rows [][]string) []Station {
 		stations = append(stations, station)
 	}
 
+	// fmt.Println(len(stations))
+
 	return stations
 
 }
@@ -68,5 +70,6 @@ func main() {
 	r.HandleFunc("/api/crs", readCrs)
 	http.Handle("/", r)
 	log.Println(http.ListenAndServe(":"+os.Getenv("PORT"), nil))
+	// log.Println(http.ListenAndServe(":8080", nil))
 
 }
